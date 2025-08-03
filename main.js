@@ -10,39 +10,42 @@
 
 
 // Classe abstrata Animal
+// Classe abstrata Animal
+
 class Animal {
     constructor(fazerSom, movimento) {
         this.fazerSom = fazerSom;
         this.movimento = movimento;
-            console.log("O animal " + this.fazerSom + " Enquanto " + this.movimento);
+        console.log("O animal " + this.fazerSom + " enquanto " + this.movimento);
     }
 }
 
-class Leao{
-    constructor(Rugir) {
-        this.Rugir = Rugir;
 
-        Animal.call(this, movimento);
-
-        console.log(this.Rugir + ": Rugi o Leão orgulhoso enquanto " + this.movimento);
+// Classe Leao que herda de Animal
+class Leao extends Animal {
+    constructor(fazerSom, movimento) {
+        super(fazerSom, movimento); // chama o construtor da classe Animal
+        console.log(fazerSom + ": Ruge o Leão orgulhoso enquanto " + this.movimento);
     }
 }
 
-class Senhor{
-    constructor(Fugir) {
-        this.conversar = conversar;
 
-        Animal.call(this, movimento);
-
-        console.log(this.conversar + ": diz o homem alegre" + this.movimento);
+// Classe Senhor que herda de Animal
+class Senhor extends Animal {
+    constructor(fazerSom, movimento) {
+        super(fazerSom, movimento);
+        console.log(fazerSom + ": diz o homem alegre enquanto " + this.movimento);
     }
 }
 
+
+// Instâncias
 const Animal1 = new Animal("Late", "corre");
-const Leao1 = new Leao("Roar!!!", "corre");
-const Senhor1 = new Senhor("Oi moça, que bom vela por aqui", "estático");
+const Leao1 = new Leao("Roar!!!", "anda");
+const Senhor1 = new Senhor("Oi moça, que bom vê-la por aqui", "estático");
 
 
+// Exibição dos objetos
 console.log(Animal1);
 console.log(Leao1);
 console.log(Senhor1);
